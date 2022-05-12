@@ -103,3 +103,5 @@ const thoughtsController = {
 }
 
 }
+
+module.exports = thoughtsController;

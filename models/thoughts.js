@@ -71,6 +71,35 @@ ThoughtsSchema.virtual('reactionCount').get(function () {
 // Use the thoughts schema to create the model for thoughts
 const Thoughts = model('Thoughts', ThoughtsSchema);
 
-model.exports = Thoughts;
+module.exports = Thoughts;
 
 
+// const thoughtSchema = new Schema({
+//     thoughtText: {
+//         type: String,
+//         required: true,
+//         // min and max char length for thought string
+//         minlength: 1,
+//         maxlength: 280
+//     },
+//     createdAt: {
+//         type: Date,
+//         default: Date.now,
+//         get: createdAtVal => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
+//     },
+//     username: {
+//         type: String,
+//         required: true
+//     },
+//     // use the reactions schema to confirm the date
+//     reactions: [ReactionsSchema]
+// },
+// {
+//     toJSON: {
+//         getters: true
+
+//     },
+//     id: false
+// }
+
+// )

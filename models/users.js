@@ -1,7 +1,7 @@
 // import from mongoose library
 const { Schema, model } = require('mongoose');
 const moment = require('moment');
-const { Users } = require('.');
+// const { Users } = require('.');
 // new schema for Users
 const UsersSchema = new Schema({
     username: {
@@ -27,12 +27,16 @@ const UsersSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Users'
         }
-    ],
+    ]
+},
+{
     toJSON: {
         virtuals: true
     },
     id: false
-});
+
+}
+);
 // get the total count of friends
 UsersSchema.virtual('friendCount').get(function () {
     return this.friends.length;
@@ -40,4 +44,4 @@ UsersSchema.virtual('friendCount').get(function () {
 // // Use the users schema to create the model for users
 const Users = model('Users', UsersSchema);
 // export the module 'Users'
-model.exports = Users;
+module.exports = Users;
